@@ -1,7 +1,7 @@
 # ================================
 # 1) Base image
 # ================================
-FROM python:3.10-slim
+FROM python:3.9-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \

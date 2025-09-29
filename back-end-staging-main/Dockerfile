@@ -1,7 +1,7 @@
 # ================================
 # 1) Base image
 # ================================
-FROM python:3.9-slim
+FROM python:3.10-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
@@ -30,7 +30,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # 3) Install Python dependencies
 # ================================
 COPY requirements.txt /app/
-RUN pip install --upgrade pip && pip install --default-timeout=100 -r requirements.txt
+RUN pip install --upgrade pip && pip install -r requirements.txt
 
 # ================================
 # 4) Copy project files

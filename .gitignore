@@ -1,0 +1,6 @@
+# Ignore Harbor installation
+harbor/
+harbor-offline-installer-v2.11.0.tgz
+docker-compose.yml
+docker-compose.yml.bak
+volumedir/

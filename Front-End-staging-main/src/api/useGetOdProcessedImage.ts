@@ -1,0 +1,34 @@
+import { useQuery } from "@tanstack/react-query";
+import { useAxiosPrivate } from "./useAxiosPrivate";
+import { getOdProcessedImages } from "./apiConstants";
+import { useSearchParams } from "react-router";
+import { OdTrainingDataType } from "./useGetOdProcessedImages.types";
+
+function useGetOdProccessedImages() {
+  const axiosInstance = useAxiosPrivate();
+  const [searchParams] = useSearchParams();
+
+  const startDate = searchParams.get("startDate");
+  const endDate = searchParams.get("endDate");
+  const activeTab = searchParams.get("active") || "ViewAll";
+  const label = searchParams.get("label") || "";
+
+  return useQuery({
+    queryKey: ["ProccessedImages", startDate, endDate, activeTab, label],
+    queryFn: async () => {
+      const response = await axiosInstance.get<OdTrainingDataType>(
+        getOdProcessedImages,
+        {
+          params: {
+            startDate,
+            endDate,
+            active: activeTab,
+            label,
+          },
+        }
+      );
+      return response.data;
+    },
+  });
+}
+export default useGetOdProccessedImages;

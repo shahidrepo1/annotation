@@ -1,0 +1,52 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+
+# Virtual environment
+venv/
+annotation_env/
+
+# Django-specific files
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+*.log
+
+
+# Secret files
+config/settings/local.py
+
+# VSCode & PyCharm settings
+.vscode/
+.idea/
+
+# Python dependencies
+*.egg-info/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Ignore coverage reports
+htmlcov/
+.coverage
+.coverage.*
+
+# Ignore compiled, minified, and cache files
+node_modules/
+npm-debug.log
+yarn-error.log
+.cache/
+
+# Ignore build and distribution files
+build/
+dist/
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore MacOS system files
+.DS_Store
+
